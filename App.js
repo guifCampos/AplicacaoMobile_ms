@@ -1,20 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { SafeAreaView } from 'react-native-web';
 
 
 export default function App() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient
           colors={['#16425B', '#81C3D7']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
+          start={{ x: 0.5, y: 0 }}
+          end={{ x: 0.5, y: 1 }}
           style={styles.container}
         >
         <View>
-            <Image source={require('./iconEscolinhaFutsal.png')} style={styles.logo} />
+            <Image source={require('./iconEscolinhaFutsal.png')} style={styles.logo}/>
             <View style={styles.actions}>
 
             </View>
@@ -43,6 +42,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#074AA6',
     borderRadius: 25,
     width: '80%',
-    elevation: 5
+    elevation: 5,
+    alignSelf: 'center',
   },
 });
