@@ -1,14 +1,24 @@
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CheckBox from 'expo-checkbox';
-import { useState } from 'react';
 
 
-export default function App() {
+
+export default function LoginScreen({ navigation }) {
 
   const [lembre, setLembre] = useState(false);
+
+  const hadleLogin = () => {
+    //autenticacao aqui
+    //se o login bem-sucedido vai para a tela principal referente ao login acessado
+    //ex: 
+      //admin -> tela principal do admin
+      //usuario -> tela principal do usuario
+    //navigation.replace('Main'); //Substitui a tela de login para evitar voltar a ela
+  }
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -16,23 +26,34 @@ export default function App() {
       <LinearGradient colors={['#16425B', '#81C3D7']} start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }} style={styles.container}>
           
           {/*logo*/}
-          <Image source={require('./iconEscolinhaFutsal.png')} style={styles.logo}/>
+          <Image source={require('../assets/images/iconEscolinhaFutsal.png')} style={styles.logo}/>
             
           {/*fomulario do login*/}
           <View style={styles.loginFormulario}>
 
             {/*campo de nome de acesso para LogIn*/}
             <Text style={styles.label}> Usuário </Text>
-            <TextInput placeholder='Email' placeholderTextColor='#aaa' style={styles.caixaDeTexto}/>
+            <TextInput 
+              placeholder='Email' 
+              placeholderTextColor='#aaa' 
+              style={styles.caixaDeTexto}  
+              keyboardType='email-address'
+            />
             
             {/*campo de sennha para LogIn*/}
             <Text style={styles.label}> Senha </Text>
-            <TextInput placeholder='Senha' placeholderTextColor='#aaa' secureTextEntry style={styles.caixaDeTexto}/>
+            <TextInput 
+              placeholder='Senha' 
+              placeholderTextColor='#aaa' 
+              secureTextEntry style={styles.caixaDeTexto} 
+              autoCapitalize='none' 
+              autoCorrect={false}
+            />
 
             {/*opcao lembre-se de mim*/}
             <View style={styles.row}>
               <View style={styles.row}>
-                <CheckBox value={false} onValueChange={setLembre} color={lembre ? '#FFF': undefined} />
+                <CheckBox value={lembre} onValueChange={setLembre} color={lembre ? '#FFF': undefined} />
                 <Text style={{ color: '#FFF', marginLeft: 8 }}> Lembrar de mim </Text>
               </View>
 
@@ -43,18 +64,18 @@ export default function App() {
             </View>
             
             {/*botao para fazer o LogIn*/}
-            <TouchableOpacity style={styles.botaoLogin}>
+            <TouchableOpacity style={styles.botaoLogin} onPress={hadleLogin}>
               <Text style={styles.textoLogin}> LogIn </Text>
             </TouchableOpacity>
 
             {/*botao para criar uma conta*/}
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
               <Text style={styles.botaoCriarConta}> Criar conta </Text>
             </TouchableOpacity>
 
           </View>  
         
-      <StatusBar style="auto" />
+      <StatusBar style="auto"/>
       </LinearGradient>
     </SafeAreaView>
   );
