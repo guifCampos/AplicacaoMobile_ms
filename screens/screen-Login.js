@@ -34,10 +34,9 @@ export default function LoginScreen({ navigation }) {
             {/*campo de nome de acesso para LogIn*/}
             <Text style={styles.label}> Usuário </Text>
             <TextInput 
-              placeholder='Email' 
+              placeholder='Nome de Acesso' 
               placeholderTextColor='#aaa' 
-              style={styles.caixaDeTexto}  
-              keyboardType='email-address'
+              style={styles.caixaDeTexto}
             />
             
             {/*campo de sennha para LogIn*/}
@@ -69,7 +68,7 @@ export default function LoginScreen({ navigation }) {
             </TouchableOpacity>
 
             {/*botao para criar uma conta*/}
-            <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+            <TouchableOpacity onPress={() => navigation.navigate('Signup')}>
               <Text style={styles.botaoCriarConta}> Criar conta </Text>
             </TouchableOpacity>
 
