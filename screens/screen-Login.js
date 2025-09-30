@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CheckBox from 'expo-checkbox';
 
-
+//ajusta a tela conforme o tamanho do dispositivo
+const { width, height } = Dimensions.get('window');
 
 export default function LoginScreen({ navigation }) {
 
@@ -89,12 +90,14 @@ const styles = StyleSheet.create({
     gap: 10
   },
   logo:{
-    width: 250,
-    height: 250,
+    width: Math.min(200, width * 0.6),
+    height: Math.min(200, width * 0.6),
     marginBottom: 20,
+    resizeMode: 'contain',
   },
   loginFormulario:{
-    width: '90%',
+    width: width * 0.9,
+    maxWidth: 400,
     backgroundColor: '#1C6DD0',
     padding: 20,
     borderRadius: 20,
@@ -108,8 +111,10 @@ const styles = StyleSheet.create({
   caixaDeTexto:{
     backgroundColor: '#FFF',
     borderRadius: 10,
-    padding: 10,
+    paddingVertical: Math.max(12, height * 0.015),
+    paddingHorizontal: 12,
     marginBottom: 15,
+    fontSize: 16,
   },
   row:{
     flexDirection: 'row',
@@ -123,7 +128,7 @@ const styles = StyleSheet.create({
   },
   botaoLogin:{
     backgroundColor: '#074AA6',
-    padding: 15,
+    paddingVertical: Math.max(14, height * 0.02),
     borderRadius: 10,
     alignItems: 'center',
     marginBottom: 15,

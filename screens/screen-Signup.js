@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Picker } from '@react-native-picker/picker';
 import { ScrollView } from 'react-native';
 
-
+const { width, height } = Dimensions.get('window');
 
 export default function SignupScreen({ navigation }) {
 
@@ -16,8 +16,10 @@ export default function SignupScreen({ navigation }) {
 
 
     const handleSignup = () => {
+        
         //logica de cadastro aqui
         //apos o cadastro bem-sucedido, redirecionar para a tela de login
+        
         navigation.replace('Login'); 
     };
 
@@ -116,13 +118,14 @@ const styles = StyleSheet.create({
     padding:20,
   },
   logo: {
-    width: 150,
-    height: 150,
+    width: Math.min(180, width * 0.5),
+    height: Math.min(180, width * 0.5),
     marginBottom: 20,
     resizeMode:'contain'
   },
   formulario: {
-    width: '90%',
+    width: width * 0.9,
+    maxWidth: 420,
     backgroundColor: '#1C6DD0',
     borderRadius: 20,
     padding: 20,
@@ -133,9 +136,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF',
     borderRadius: 10,
     paddingHorizontal: 12,
+    paddingVertical: Math.max(12, height * 0.015),
     marginBottom: 12,
     fontSize: 16,
-    minHeight: 50,
  },
  row: {
     flexDirection: 'row',
@@ -147,7 +150,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFF',
     borderRadius: 10,
-    minHeight: 50,
+    minHeight: Math.max(50, height * 0.06),
     marginHorizontal: 4,
  },
  pickerItem: {
@@ -155,9 +158,9 @@ const styles = StyleSheet.create({
     color: '#000',
  },
  botao: {
-    width: '100%',        // botão ocupa a largura toda
+    width: '100%',
     backgroundColor: '#333',
-    paddingVertical: 15,
+    paddingVertical: Math.max(14, height * 0.02),
     borderRadius: 30,
     alignItems: 'center',
     marginTop: 10,
