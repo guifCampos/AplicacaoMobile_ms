@@ -9,16 +9,26 @@ import CheckBox from 'expo-checkbox';
 const { width, height } = Dimensions.get('window');
 
 export default function LoginScreen({ navigation }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const [lembre, setLembre] = useState(false);
 
-  const hadleLogin = () => {
-    //autenticacao aqui
-    //se o login bem-sucedido vai para a tela principal referente ao login acessado
-    //ex: 
-      //admin -> tela principal do admin
-      //usuario -> tela principal do usuario
-    //navigation.replace('Main'); //Substitui a tela de login para evitar voltar a ela
+  function hadleLogin() {
+    if (!username || !password) {
+      alert('Por favor, preencha todos os campos de forma correta para continuar 😁');
+      return;
+    }
+
+    const data = {
+      username,
+      password,
+    };
+
+    console.log(data);
+
+
+    navigation.replace('MenuAdmin');
   }
 
   return (
@@ -38,6 +48,7 @@ export default function LoginScreen({ navigation }) {
               placeholder='Nome de Acesso' 
               placeholderTextColor='#aaa' 
               style={styles.caixaDeTexto}
+              onChangeText={setUsername}
             />
             
             {/*campo de sennha para LogIn*/}
@@ -45,9 +56,10 @@ export default function LoginScreen({ navigation }) {
             <TextInput 
               placeholder='Senha' 
               placeholderTextColor='#aaa' 
-              secureTextEntry style={styles.caixaDeTexto} 
+              secureTextEntry style={[styles.caixaDeTexto]} 
               autoCapitalize='none' 
               autoCorrect={false}
+              onChangeText={setPassword}
             />
 
             {/*opcao lembre-se de mim*/}
