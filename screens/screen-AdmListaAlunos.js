@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, FlatList, Modal,Dimensions } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, FlatList, Modal, Dimensions, Image } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
@@ -11,7 +11,23 @@ export default function MenuADM_Alunos({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedAluno, setSelectedAluno] = useState(null);
 
-  const alunos = [];
+  //exemplo de dados de alunos
+  const alunos = [
+    {
+      id: "1",
+      nome: "João Pedro",
+      resp: "Carlos Pedro",
+      turma: "Sub 11",
+      status: "Em dia",
+    },
+    {
+      id: "2",
+      nome: "Rafael Santos",
+      resp: "Joana Santos",
+      turma: "Sub 09",
+      status: "Atrasado",
+    },
+  ];
 
   const renderAluno = ({ item }) => (
     <View style={styles.cardAluno}>
@@ -51,11 +67,23 @@ export default function MenuADM_Alunos({ navigation }) {
     <LinearGradient colors={["#16425B", "#81C3D7"]} style={styles.container}>
       <SafeAreaView style={{ flex: 1, padding: 12 }}>
         
-        <View style={styles.header}>
-          <Ionicons name="people" size={28} color="#FFF" />
-          <Text style={styles.headerText}>Lista de Alunos</Text>
-        </View>
+        <View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Image
+              source={require('../assets/images/iconEscolinhaFutsal.png')}
+              style={styles.logo}
+            />
+            <Text style={styles.cardHeaderText}>Escolinha de Futsal{"\n"}Santos Anjos</Text>
+          </View>
 
+          <View style={styles.cardContent}>
+            <Ionicons name="people" size={28} color="#000" />
+            <Text style={styles.headerText}>Lista de Alunos</Text>
+          </View>
+
+        </View>
+        
+        {/*barra de tarefas - adicionar aluno e filtragem de alunos*/}
         <View style={styles.topRow}>
             {/*botao para adicionar aluno manualmente*/}
           <TouchableOpacity style={styles.btnAdicionar}>
@@ -63,8 +91,8 @@ export default function MenuADM_Alunos({ navigation }) {
             <Text style={styles.btnText}>Adicionar</Text>
           </TouchableOpacity>
             {/*botao para abrir os filtros*/}
-          <TouchableOpacity onPress={() => setFilterVisible(!filterVisible)}>
-            <Ionicons name="filter" size={28} color="#FFF" />
+          <TouchableOpacity style={styles.btnAdicionar} onPress={() => setFilterVisible(!filterVisible)}>
+            <Ionicons name="menu" size={28} color="#FFF" />
           </TouchableOpacity>
         </View>
 
@@ -125,13 +153,47 @@ const styles = StyleSheet.create({
   container: { 
     flex: 1 
 },
+card: {
+    width: '100%',
+    borderRadius: 18,
+    overflow: 'hidden',
+    backgroundColor: 'transparent',
+    alignItems: 'center',
+    marginBottom: 16,
+  },
+  cardHeader: {
+    width: '100%',
+    backgroundColor: '#0F69C8',
+    paddingVertical: 18,
+    alignItems: 'center',
+  },
+  logo: {
+    width: Math.min(140, width * 0.35),
+    height: Math.min(140, width * 0.35),
+    resizeMode: 'contain',
+    marginBottom: 6,
+  },
+  cardHeaderText: {
+    color: '#FFF',
+    fontWeight: '700',
+    textAlign: 'center',
+    lineHeight: 20,
+  },
+  cardContent: {
+    backgroundColor: '#FFF',
+    width: '100%',
+    paddingVertical: 18,
+    paddingHorizontal: 14,
+    alignItems: 'center',
+    borderBottomLeftRadius: 18,
+    borderBottomRightRadius: 18,
+  },
   header: { 
     flexDirection: "row", 
     alignItems: "center", 
     marginBottom: 10 
 },
-  headerText: { 
-    color: "#FFF", 
+  headerText: {  
     fontSize: 20, 
     marginLeft: 10, 
     fontWeight: "bold" 
