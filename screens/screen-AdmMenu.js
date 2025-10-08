@@ -44,7 +44,7 @@ export default function MenuAdmin({ navigation }) {
 
             <TouchableOpacity
               style={styles.optionButton}
-              onPress={() => navigation.navigate('Frequencia')}
+              onPress={() => navigation.navigate('Frequencias')}
             >
               <Text style={styles.optionIcon}>🗒️</Text>
               <Text style={styles.optionText}>Lista de Frequência</Text>

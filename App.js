@@ -7,6 +7,7 @@ import LoginScreen from './screens/screen-Login';
 import SignupScreen from './screens/screen-Signup';
 import MenuAdmin from './screens/screen-AdmMenu';
 import MenuADM_Alunos from './screens/screen-AdmListaAlunos';
+import MenuADM_Frequencias from './screens/screen-AdmListaFrequencia';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,9 @@ export default function App() {
       
         {/*tela lista de alunos do administrador*/}
         <Stack.Screen name="Alunos" component={MenuADM_Alunos} options={{ title: 'Lista de Alunos'}}/>
+
+        {/*tela lista de frequencias do administrador e auxiliares*/}
+        <Stack.Screen name="Frequencias" component={MenuADM_Frequencias} options={{ title: 'Lista de Frequências'}}/>
 
       </Stack.Navigator>
     </NavigationContainer>
