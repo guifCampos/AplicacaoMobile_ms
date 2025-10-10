@@ -170,7 +170,7 @@ export const OptionButtonStyles = StyleSheet.create({
         paddingHorizontal: width * 0.01,
         marginBottom: height * 0.02,
     },
-    optionButton: {
+    optionButtonContainer: {
         flex: 1,
         marginHorizontal: width * 0.025,
         backgroundColor: Colors.HEADER_CARD_BG,
