@@ -14,7 +14,7 @@ export const Colors = {
     DARK_TEXT: '#003A5A',                   //cor principal de texto escuro
     LIGHT_TEXT: '#FFF',                     //cor principal de texto claro
     ACTION_BLUE: '#0F69C8',                 //azul para botoes de acao e icones
-    BACK_BUTTON_BG: '#0D4B6C',              //fundo do botao voltar
+    BACK_BUTTON_BG: '#003554',              //fundo do botao voltar
     EXIT_BUTTON_BG: '#0D4B6C',              //fundo do botao sair
     BUTTON_SUCCESS: '#0F69C8',              //para acoes positivas
     BUTTON_DANGER: '#D9534F',               //cor para acoes de perigo/sair
@@ -242,10 +242,10 @@ export const BirthdaySectionStyles = StyleSheet.create({
 export const AlunoCardStyles = StyleSheet.create({
     cardAluno: { 
         backgroundColor: Colors.HEADER_CARD_BG, 
-        borderRadius: 10, 
+        borderRadius: 15, 
         padding: 15, 
         marginBottom: 10,
-        borderLeftWidth: 5,
+        borderLeftWidth: 15,
         borderLeftColor: Colors.ACTION_BLUE,
         elevation: 1,
         shadowColor: "#000",
@@ -294,8 +294,9 @@ export const AlunoCardStyles = StyleSheet.create({
         alignItems: "center", 
         justifyContent: 'center',
         gap: 5, 
-        marginVertical: 4, 
-        padding: 8, 
+        marginVertical: 4,
+        marginHorizontal: 4, 
+        padding: 10, 
         borderWidth: 1, 
         borderColor: Colors.ACTION_BLUE, 
         borderRadius: 8,
