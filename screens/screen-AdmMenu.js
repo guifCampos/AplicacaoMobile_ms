@@ -4,7 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons"; //bibliotecas de icones 
 
-import { GlobalStyles, Colors, OptionButtonStyles, BirthdaySectionStyles } from '../screens/stylesCommon';
+import { GlobalStyles, Colors, OptionButtonStyles, BirthdaySectionStyles, HeaderStyles } from '../screens/stylesCommon';
 import { MainHeader, WelcomeCard } from '../screens/components'; 
 
 
@@ -23,11 +23,16 @@ export default function MenuAdmin({ navigation }) {
             <SafeAreaView style={GlobalStyles.safeContainer}>
                 <ScrollView contentContainerStyle={styles.scrollViewContent}>
                     
-                    <MainHeader />
-                    
-                    {/*card com o boas vindas e o nome do usuario*/}
-                    <WelcomeCard userName="ADMINISTRADOR" /> {/*LEMBRETE --> tornar dinamico*/}
 
+                    {/*AQUI POSSIVELMENTE ESTA O ERRO/BUG (MAINHEADER OU WELCOMECARD): 
+                        Console ERROR
+                        Text string must be rendered within a <Text> component.
+                    */}
+                    <MainHeader/>
+                    {/*card com o boas vindas e o nome do usuario*/}
+                    <WelcomeCard userName="ADMINISTRADOR"> {/*LEMBRETE --> tornar dinamico*/}
+                       <Text userName="ADMINISTRADOR"/>
+                    </WelcomeCard>
                     {/*botoes de navegacao*/}
                     <View style={styles.buttonSection}>
                         <View style={styles.tresbotoesalinhados}>
