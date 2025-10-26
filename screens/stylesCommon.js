@@ -67,9 +67,10 @@ export const HeaderStyles = StyleSheet.create({
         backgroundColor: Colors.HEADER_BG_BLUE,
         paddingTop: height * 0.02,
         paddingBottom: height * 0.02,
-        borderBottomLeftRadius: 18, 
-        borderBottomRightRadius: 18,
+        borderTopRightRadius: 18,
+        borderTopLeftRadius: 18,
         alignItems: 'center',
+        marginTop: (height * 0.02),
         marginBottom: - (height * 0.03),
         elevation: 5,
         shadowColor: "#000",
@@ -85,6 +86,7 @@ export const HeaderStyles = StyleSheet.create({
         width: width * 0.18,
         height: width * 0.18,
         marginRight: width * 0.03,
+        marginBottom: 21,
         resizeMode: 'contain',
     },
     textHeader: {
@@ -93,11 +95,12 @@ export const HeaderStyles = StyleSheet.create({
     nomeEscolinha: {
         color: Colors.LIGHT_TEXT,
         fontSize: width * 0.05,
-        fontWeight: "bold"
+        fontWeight: "bold",
     },
     subtitulo: {
         color: Colors.LIGHT_TEXT,
         fontSize: width * 0.04,
+        marginBottom: 21,
     },
 });
 
