@@ -24,13 +24,9 @@ export default function MenuAdmin({ navigation }) {
                 <ScrollView contentContainerStyle={styles.scrollViewContent}>
                     
 
-                    {/*AQUI POSSIVELMENTE ESTA O ERRO/BUG (MAINHEADER OU WELCOMECARD): 
-                        Console ERROR
-                        Text string must be rendered within a <Text> component.
-                    */}
                     <MainHeader/>
                     {/*card com o boas vindas e o nome do usuario*/}
-                    <WelcomeCard userName="ADMINISTRADOR"> {/*LEMBRETE --> tornar dinamico*/}
+                    <WelcomeCard> {/*LEMBRETE --> tornar dinamico*/}
                        <Text userName="ADMINISTRADOR"/>
                     </WelcomeCard>
                     {/*botoes de navegacao*/}
