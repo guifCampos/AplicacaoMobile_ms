@@ -29,7 +29,13 @@ export default function MenuADM_Frequencias({ navigation }) {
             <TouchableOpacity
               key={index}
               style={styles.btnCategoria}
-              onPress={() => console.log(`Navegar para Turma: ${item}`)}
+              onPress={() => navigation.navigate(
+                'FrequenciaSub05', { turma: item }, 
+                'FrequenciaSub07', { turma: item }, 
+                'FrequenciaSub09', { turma: item }, 
+                'FrequenciaSub11', { turma: item }, 
+                'FrequenciaSub13', { turma: item }
+              )}
             >
               <Text style={styles.btnCategoriaTexto}>{item}</Text>
             </TouchableOpacity>
