@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Picker } from '@react-native-picker/picker';
 import { ScrollView } from 'react-native';
+import { Colors} from './stylesCommon'; 
 
 const { width, height } = Dimensions.get('window');
 
@@ -25,7 +26,7 @@ export default function SignupScreen({ navigation }) {
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
-            <LinearGradient colors={['#16425B', '#81C3D7']} start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }} style={styles.container}>
+            <LinearGradient colors={[Colors.BACKGROUND_GRADIENT_START, Colors.BACKGROUND_GRADIENT_END]} start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }} style={styles.container}>
           
                 <ScrollView contentContainerStyle={{ alignItems: 'center' }}>
 
@@ -130,6 +131,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 20,
     alignItems: 'center',
+    elevation: 5,
  },
  input: {
     width: '100%',

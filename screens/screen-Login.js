@@ -4,6 +4,7 @@ import { Image, StyleSheet, Text, View, TextInput, TouchableOpacity, Dimensions 
 import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import CheckBox from 'expo-checkbox';
+import { GlobalStyles, Colors} from './stylesCommon'; 
 
 //ajusta a tela conforme o tamanho do dispositivo
 const { width, height } = Dimensions.get('window');
@@ -34,7 +35,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       
-      <LinearGradient colors={['#16425B', '#81C3D7']} start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }} style={styles.container}>
+      <LinearGradient colors={[Colors.BACKGROUND_GRADIENT_START, Colors.BACKGROUND_GRADIENT_END]} start={{ x: 0.5, y: 0 }} end={{ x: 0.5, y: 1 }} style={styles.container}>
           
           {/*logo*/}
           <Image source={require('../assets/images/iconEscolinhaFutsal.png')} style={styles.logo}/>
@@ -65,7 +66,7 @@ export default function LoginScreen({ navigation }) {
             {/*opcao lembre-se de mim*/}
             <View style={styles.row}>
               <View style={styles.row}>
-                <CheckBox value={lembre} onValueChange={setLembre} color={lembre ? '#FFF': undefined} />
+                <CheckBox style={styles.checkbox} value={lembre} onValueChange={setLembre} color={lembre ? '#FFF': undefined} />
                 <Text style={{ color: '#FFF', marginLeft: 8 }}> Lembrar de mim </Text>
               </View>
 
@@ -134,14 +135,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 15,
   },
+  checkbox: {
+          width: 24,
+          height: 24,
+          borderRadius: 4,
+          borderWidth: 2,
+          borderColor: '#fff',
+      },
   esqueceuSenha:{
     color: '#FFF',
     textDecorationLine: 'underline',
   },
   botaoLogin:{
-    backgroundColor: '#074AA6',
+    backgroundColor: '#333',
     paddingVertical: Math.max(14, height * 0.02),
-    borderRadius: 10,
+    borderRadius: 30,
     alignItems: 'center',
     marginBottom: 15,
   },
