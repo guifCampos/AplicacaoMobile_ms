@@ -4,8 +4,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons, FontAwesome5, MaterialCommunityIcons } from "@expo/vector-icons"; //bibliotecas de icones 
 
-import { GlobalStyles, Colors, OptionButtonStyles, BirthdaySectionStyles, HeaderStyles } from '../screens/stylesCommon';
-import { MainHeader, WelcomeCard } from '../screens/components'; 
+import { GlobalStyles, Colors, OptionButtonStyles, BirthdaySectionStyles, HeaderStyles } from './stylesCommon';
+import { MainHeader, WelcomeCard } from './components'; 
 
 
 const { width, height } = Dimensions.get('window');

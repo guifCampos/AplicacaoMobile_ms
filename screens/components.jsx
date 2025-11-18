@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, Image, Dimensions, StyleSheet } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
-import { HeaderStyles, CardStyles, Colors } from '../screens/stylesCommon'; 
+import { HeaderStyles, CardStyles, Colors } from './stylesCommon'; 
 
 const { width, height } = Dimensions.get('window');
 

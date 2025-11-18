@@ -5,8 +5,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons, MaterialIcons, FontAwesome5 } from "@expo/vector-icons";
 import Checkbox from "expo-checkbox";
 
-import { GlobalStyles, Colors, AlunoCardStyles, ModalStyles } from '../screens/stylesCommon'; 
-import { AdmHeader } from '../screens/components';
+import { GlobalStyles, Colors, AlunoCardStyles, ModalStyles } from './stylesCommon'; 
+import { AdmHeader } from './components';
 
 const { width, height } = Dimensions.get("window");
 
@@ -59,7 +59,7 @@ export default function MenuADM_Alunos({ navigation }) {
         });
     };
     
-    //filtro para unica selecao (ordenacao)
+    //filtro para selecao unica 
     const toggleSort = (orderValue) => {
         setSortOrder(prevOrder => (prevOrder === orderValue ? null : orderValue));
     };
@@ -91,7 +91,7 @@ export default function MenuADM_Alunos({ navigation }) {
             return statusMatch && turmaMatch && statusAlunoMatch;
         });
         
-        //ordenacaoo alfabetica
+        //ordenacao alfabetica
         if (sortOrder === 'A-Z') {
             currentList.sort((a, b) => a.nome.localeCompare(b.nome));
         } else if (sortOrder === 'Z-A') {
@@ -453,7 +453,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: width * 0.04,
     },
-    // Estilos de Status
+    //estilos do status da conta do aluno
     ativa: {
         color: Colors.DARK_TEXT, 
         fontWeight: 'bold',
