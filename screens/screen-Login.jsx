@@ -66,7 +66,7 @@ export default function LoginScreen({ navigation }) {
             {/*opcao lembre-se de mim*/}
             <View style={styles.row}>
               <View style={styles.row}>
-                <CheckBox style={styles.checkbox} value={lembre} onValueChange={setLembre} color={lembre ? '#FFF': undefined} />
+                <CheckBox style={styles.checkbox} value={lembre} onValueChange={setLembre} color={lembre ? '#333': undefined} />
                 <Text style={{ color: '#FFF', marginLeft: 8 }}> Lembrar de mim </Text>
               </View>
 
