@@ -32,12 +32,12 @@ export default function MenuADM_Alunos({ navigation }) {
 
     //exemplo de dados de alunos
     const alunos = [
-        { id: "1", nome: "João Pedro", resp: "Carlos Pedro", turma: "Sub 11", status: "Em dia", frequencia: "87%", endereco: "Rua A, 123 - Centro", statusAluno: "Ativa" },
-        { id: "2", nome: "Rafael Santos", resp: "Joana Santos", turma: "Sub 09", status: "Atrasado", frequencia: "72%", endereco: "Rua B, 23 - Bairro Sudeste", statusAluno: "Ativa" },
-        { id: "3", nome: "Maria Silva", resp: "Ana Silva", turma: "Sub 13", status: "Em dia", frequencia: "93%", endereco: "Rua B, 51 - Bairro Sudeste", statusAluno: "Desativada" },
-        { id: "4", nome: "Lucas Lima", resp: "Pedro Lima", turma: "Sub 07", status: "Atrasado", frequencia: "100%", endereco: "Rua G, 21 - Zona Sul", statusAluno: "Ativa" },
-        { id: "5", nome: "Ana Costa", resp: "Paulo Costa", turma: "Sub 05", status: "Em dia", frequencia: "80%", endereco: "Rua E, 202 - Bairro", statusAluno: "Desativada" },
-        { id: "6", nome: "Beto Souza", resp: "Marta Souza", turma: "Sub 11", status: "Atrasado", frequencia: "90%", endereco: "Rua F, 303 - Bairro", statusAluno: "Ativa" },
+        { id: "1", nome: "João Pedro", resp: "Carlos Pedro", turma: "Sub 11", telefone: "32 9999-999", status: "Em dia", frequencia: "87%", endereco: "Rua A, 123 - Centro", statusAluno: "Ativa" },
+        { id: "2", nome: "Rafael Santos", resp: "Joana Santos", turma: "Sub 09", telefone: "32 9999-999", status: "Atrasado", frequencia: "72%", endereco: "Rua B, 23 - Bairro Sudeste", statusAluno: "Ativa" },
+        { id: "3", nome: "Maria Silva", resp: "Ana Silva", turma: "Sub 13", telefone: "21 9999-999", status: "Em dia", frequencia: "93%", endereco: "Rua B, 51 - Bairro Sudeste", statusAluno: "Desativada" },
+        { id: "4", nome: "Lucas Lima", resp: "Pedro Lima", turma: "Sub 07", telefone: "11 9999-999", status: "Atrasado", frequencia: "100%", endereco: "Rua G, 21 - Zona Sul", statusAluno: "Ativa" },
+        { id: "5", nome: "Ana Costa", resp: "Paulo Costa", turma: "Sub 05", telefone: "11 9999-999", status: "Em dia", frequencia: "80%", endereco: "Rua E, 202 - Bairro", statusAluno: "Desativada" },
+        { id: "6", nome: "Beto Souza", resp: "Marta Souza", turma: "Sub 11", telefone: "21 9999-999", status: "Atrasado", frequencia: "90%", endereco: "Rua F, 303 - Bairro", statusAluno: "Ativa" },
     ];
 
 
@@ -313,6 +313,7 @@ export default function MenuADM_Alunos({ navigation }) {
                                 <Text style={ModalStyles.modalText}>Nome: <Text style={ModalStyles.modalTextBold}>{selectedAluno.nome}</Text></Text>
                                 <Text style={ModalStyles.modalText}>Responsável: <Text style={ModalStyles.modalTextBold}>{selectedAluno.resp}</Text></Text>
                                 <Text style={ModalStyles.modalText}>Turma: <Text style={ModalStyles.modalTextBold}>{selectedAluno.turma}</Text></Text>
+                                <Text style={ModalStyles.modalText}>Telefone: <Text style={ModalStyles.modalTextBold}>{selectedAluno.telefone}</Text></Text>
                                 <Text style={ModalStyles.modalText}>Mensalidade: 
                                     <Text style={[ModalStyles.modalTextBold, selectedAluno.status === "Em dia" ? AlunoCardStyles.emDia : AlunoCardStyles.atrasado]}>
                                         {" "}{selectedAluno.status}
